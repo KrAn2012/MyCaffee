@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+
+<body>
+  
+    <div class="container-fluid bg-info">
+        <div class="p-4 col-12">
+            <div class="row">
+                <div class="col-9">
+                    <h1>myCoffee</h1>
+                </div>
+                <div class="col-3 btn-group mt-4">
+                    <div class="dropdown">
+
+                        <button type="button"  class="col btn btn-dark" >Koszyk</button>
+                        
+                        <a class="btn btn-primary m-1" action="#"  th:href="registrationPage" role="button">Zarejestruj</a>
+
+                        <button  type="button" class="btn btn-primary dropdown-toggle" data-bs-auto-close="outside" data-bs-toggle="dropdown" 
+                            aria-expanded="false" >
+                            Zaloguj
+                        </button>
+
+                        
+                        <form class="dropdown-menu p-4" action="loginPage" th:href="@{/loginPage.html}" method="post"  th:object="${userMyCoffee}" >
+                            <div class="mb-3">
+                                <label class="form-control">Email adres</label>
+                                <input type="email"  th:field="*{email}" >
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-control">Hasło</label>
+                                <input type="password" th:field="*{password}">
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                                    <label class="form-check-label" for="dropdownCheck2">
+                                        Zapamiętaj
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Zaloguj</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="border-bottom border-warning-subtele; border-5"></div>
+
+
+    <div class="container-fluid bg-dark ">
+      <div class="dropdown-center">
+        <button class="btn btn-secondary dropdown-toggle col-1" type="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Kawa
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item " href="#">Lavazza</a></li>
+          <li><a class="dropdown-item " href="#">Jacobs</a></li>
+          <li><a class="dropdown-item " href="#">Tchibo</a></li>
+        </ul>
+        <button class="btn btn-secondary dropdown-toggle col-1" type="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Herbata
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Czarna</a></li>
+          <li><a class="dropdown-item" href="#">Zielona</a></li>
+          <li><a class="dropdown-item" href="#">Yerbamate</a></li>
+        </ul>
+        <button class="btn btn-secondary dropdown-toggle col-1" type="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Akcesoria
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Kubki</a></li>
+          <li><a class="dropdown-item" href="#">Ekspresy</a></li>
+          <li><a class="dropdown-item" href="#">Zaparzacze</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container-fluid p-0">
+      <img src="https://source.unsplash.com/1600x900/?coffe">
+      <div class="position-absolute bottom-0 end-0 ">
+        <h2 class="text-dark">
+          <p>Copyring myCoffe.com</p>
+        </h2>
+      </div>
+  
+    </div>
+  
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <style>
+    #myCoffe {
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      color: rgb(110, 25, 190);
+      font-size: 70px;
+      font-style: italic;
+    }
+
+    #bg {
+      color: rgb(143, 113, 113);
+    }
+  </style>
+
+
+    
+
+    
+</body>
+</html>
+
+<!--
+<form action="#" th:action="@{/index}" method="post"  th:object="${user}">
+    <label>Name</label>
+    
+    
+
+    <label>Email</label>
+    <input type="email" th:field="*{email}" /><br>
+
+    <label>surName</label>
+    <input type="password" th:field="*{password}"/><br>
+</div>
+<div>
+    <div>
+        <div><div>
+            <div>
+
+<button type="submit">Log</button>
+</form>
+-->

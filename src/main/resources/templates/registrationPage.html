@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl" th=xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid bg-info">
+        <div class="p-4 col-12">
+            <div class="row">
+                <div class="col-2">
+                    <h1>myCoffe</h1><br>
+                    <br>
+                    <h3>Formularz rejestracji</h3>
+                </div>
+
+<form  class="form-group"  th:href="@{/registrationConfirmed.html}" th:object="${userMyCoffee}"  method="post">
+
+    <div class="mb-3">
+        <label class="form-label" >Imię</label>
+        <td><input type="text"  class="form-control" th:field="*{name}" ></td>
+        <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name errors</td>
+    </div>
+    
+    <div class="mb-3">
+        <label class="form-label">Nazwisko</label>
+        <input type="text" class="form-control" th:field="*{lastName}" >
+    </div>
+
+   
+        <div class="mb-3">
+            <label class="form-label">Email adres</label>
+            <input type="email" class="form-control"  th:field="*{email}" >
+        </div>
+
+        <div class="mb-3">
+            <label class="col-form-label">Hasło</label>
+            <input type="password" class="form-control" th:field="*{password}" >
+        </div>
+
+        <div class="mb-3">
+            <span id="passwordHelpInline" class="form-text">
+                Musi być 8-20 znaków.
+            </span>
+        </div>
+
+        <button type="submit">Potwierdź</button>
+
+</form>
+
+
+</div>
+        </div>
+
+
+
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
+
