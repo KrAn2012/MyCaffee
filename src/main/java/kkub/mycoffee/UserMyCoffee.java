@@ -1,7 +1,7 @@
 package kkub.mycoffee;
 
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -14,30 +14,30 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 
-@Table(name = "UserMyCoffe")
+
 
 @Entity
 public class UserMyCoffee {
 
 @Id
 @GeneratedValue(strategy = GenerationType.AUTO)
-private Long Id;
-//@NotBlank(message="Set Name")
+private Long id;
+@NotBlank(message="Wypełnij pole")
 private String name;
-//@NotBlank(message="Set LastName")
+@NotBlank(message="Wypełnij pole")
 private String lastName;
-//@Email
+@Email
+@NotBlank(message="Proszę wpisać właściwy email")
 private String email;
-//@NotEmpty
+@NotEmpty(message="Proszę wpisać hasło")
 private String password;
 
 
-    
-    
 }
